@@ -1,0 +1,12 @@
+@startuml
+skinparam class {
+	BackgroundColor White
+	ArrowColor Black
+	BorderColor Black
+}
+class "Инженер тех. поддержки" as P {
+ Портал
+Ответ Решать проблему (Заявка, При поступлении новой заявки)
+}
+hide circle
+@enduml
