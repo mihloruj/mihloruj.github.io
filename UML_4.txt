@@ -1,0 +1,20 @@
+@startuml
+actor "Дежурный" as p
+database "Данные о заявке" as q
+participant "SLA" as m
+participant "Решение" as d
+actor "Управляющий" as cd
+database "БД Решения" as t
+p -> q : Сбор данных
+q -> p 
+p -> m : Проверка на соответствие
+m -> p
+p -> d : Создание отчета
+d -> cd
+activate cd
+cd -> m : Повторная проверка на соответствие
+m -> cd
+cd -> p : Отправка на переделывание (при необходимости)
+cd -> t : Отправка ответа
+deactivate cd
+@enduml
